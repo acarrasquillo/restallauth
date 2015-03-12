@@ -40,6 +40,7 @@ class CustomUser(AbstractBaseUser,PermissionsMixin):
 
 	### Redefine the basic fields that would be defined in User ###
 	email = models.EmailField(verbose_name='email address', unique=True, max_length=255)
+	username = models.CharField(verbose_name='username', max_length=30, blank=True)
 	first_name = models.CharField(max_length=30, null=True, blank=True)
 	last_name=models.CharField(max_length=50, null=True, blank=True)
 	date_joined = models.DateTimeField(auto_now_add=True)
